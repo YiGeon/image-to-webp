@@ -1,0 +1,44 @@
+{
+  "name": "image-to-webp",
+  "version": "1.0.0",
+  "description": "Image to WebP Converter",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac --win",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win"
+  },
+  "keywords": ["image", "webp", "converter"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "electron": "^39.2.5",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.image-to-webp.app",
+    "productName": "Image to WebP",
+    "icon": "build/icon.png",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "style.css"
+    ],
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "portable"
+    }
+  }
+}

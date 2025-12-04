@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Image to WebP Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image to WebP Converter</h1>
+
+    <div id="dropZone" class="drop-zone">
+      <div class="drop-zone-content">
+        <div class="drop-icon">+</div>
+        <p>이미지를 여기에 드래그하거나<br>클릭하여 선택하세요</p>
+        <span class="supported-formats">JPG, PNG, GIF, BMP, TIFF</span>
+      </div>
+    </div>
+
+    <div class="quality-section">
+      <label for="quality">품질: <span id="qualityValue">80</span>%</label>
+      <input type="range" id="quality" min="1" max="100" value="80">
+    </div>
+
+    <div id="fileList" class="file-list"></div>
+
+    <div class="button-group">
+      <button id="selectSaveDir" class="btn btn-secondary" disabled>저장 위치 선택</button>
+      <button id="convertBtn" class="btn btn-primary" disabled>변환 시작</button>
+    </div>
+
+    <div id="savePathDisplay" class="save-path"></div>
+
+    <div id="progressSection" class="progress-section" style="display: none;">
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <p id="progressText">변환 중...</p>
+    </div>
+
+    <div id="resultSection" class="result-section" style="display: none;">
+      <h3>변환 완료!</h3>
+      <div id="resultStats"></div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
