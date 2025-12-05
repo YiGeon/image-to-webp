@@ -24,7 +24,7 @@
 
 ```bash
 # 저장소 클론
-git clone https://github.com/your-username/image-to-webp.git
+git clone https://github.com/YiGeon/image-to-webp.git
 cd image-to-webp
 
 # 의존성 설치
